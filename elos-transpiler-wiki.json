@@ -1,0 +1,374 @@
+[
+  {
+    "name": "onReady",
+    "type": "event",
+    "wiki": "Bot hazır olduğunda çalışır.",
+    "incele": "```enc\nonReady():\n    log('Bot başladı!')\n```",
+    "params": []
+  },
+  {
+    "name": "onBotJoin",
+    "type": "event",
+    "wiki": "Bot bir sunucuya katıldığında çalışır.",
+    "incele": "```enc\nonBotJoin(guild):\n    log(guild.name)\n```",
+    "params": [{"name": "guild", "desc": "Sunucu objesi"}]
+  },
+  {
+    "name": "onBotLeave",
+    "type": "event",
+    "wiki": "Bot bir sunucudan ayrıldığında çalışır.",
+    "incele": "```enc\nonBotLeave(guild):\n    log('Ayrıldık')\n```",
+    "params": [{"name": "guild", "desc": "Sunucu objesi"}]
+  },
+  {
+    "name": "onMessage",
+    "type": "event",
+    "wiki": "Bir mesaj gönderildiğinde çalışır.",
+    "incele": "```enc\nonMessage(message):\n    if 'merhaba' in message.content:\n        sendMessage(message.channel, 'Selam!')\n```",
+    "params": [{"name": "message", "desc": "Mesaj objesi"}]
+  },
+  {
+    "name": "onMessageDelete",
+    "type": "event",
+    "wiki": "Bir mesaj silindiğinde çalışır.",
+    "incele": "```enc\nonMessageDelete(message):\n    log('Mesaj silindi')\n```",
+    "params": [{"name": "message", "desc": "Silinen mesaj objesi"}]
+  },
+  {
+    "name": "onMessageEdit",
+    "type": "event",
+    "wiki": "Bir mesaj düzenlendiğinde çalışır.",
+    "incele": "```enc\nonMessageEdit(before, after):\n    log('Mesaj güncellendi')\n```",
+    "params": [
+      {"name": "before", "desc": "Düzenlenmeden önceki mesaj"},
+      {"name": "after", "desc": "Düzenlenmeden sonraki mesaj"}
+    ]
+  },
+  {
+    "name": "onMemberJoin",
+    "type": "event",
+    "wiki": "Bir üye sunucuya katıldığında çalışır.",
+    "incele": "```enc\nonMemberJoin(member):\n    sendMessage(channel, 'Hoş geldiniz ' + member.username + '!')\n```",
+    "params": [{"name": "member", "desc": "Üye objesi"}]
+  },
+  {
+    "name": "onMemberLeave",
+    "type": "event",
+    "wiki": "Bir üye sunucudan ayrıldığında çalışır.",
+    "incele": "```enc\nonMemberLeave(member):\n    log(member.username + ' ayrıldı')\n```",
+    "params": [{"name": "member", "desc": "Ayrılan üye objesi"}]
+  },
+  {
+    "name": "onMemberBan",
+    "type": "event",
+    "wiki": "Bir üye yasaklandığında çalışır.",
+    "incele": "```enc\nonMemberBan(guild, user):\n    log(user.username + ' yasaklandı')\n```",
+    "params": [
+      {"name": "guild", "desc": "Sunucu objesi"},
+      {"name": "user", "desc": "Yasaklanan kullanıcı objesi"}
+    ]
+  },
+  {
+    "name": "onMemberUnban",
+    "type": "event",
+    "wiki": "Bir üyenin yasağı kaldırıldığında çalışır.",
+    "incele": "```enc\nonMemberUnban(guild, user):\n    log(user.username + ' yasağı kaldırıldı')\n```",
+    "params": [
+      {"name": "guild", "desc": "Sunucu objesi"},
+      {"name": "user", "desc": "Yasağı kaldırılan kullanıcı objesi"}
+    ]
+  },
+  {
+    "name": "onMemberKick",
+    "type": "event",
+    "wiki": "Bir üye sunucudan atıldığında çalışır.",
+    "incele": "```enc\nonMemberKick(member):\n    log(member.username + ' atıldı')\n```",
+    "params": [{"name": "member", "desc": "Atılan üye objesi"}]
+  },
+  {
+    "name": "onMemberUpdate",
+    "type": "event",
+    "wiki": "Bir üyenin bilgileri güncellendiğinde çalışır.",
+    "incele": "```enc\nonMemberUpdate(before, after):\n    log('Üye güncellendi')\n```",
+    "params": [
+      {"name": "before", "desc": "Güncellemeden önceki bilgiler"},
+      {"name": "after", "desc": "Güncellemeden sonraki bilgiler"}
+    ]
+  },
+  {
+    "name": "onJoinVoice",
+    "type": "event",
+    "wiki": "Bir üye ses kanalına katıldığında çalışır.",
+    "incele": "```enc\nonJoinVoice(member, before, after):\n    log(member.username + ' sesli kanala girdi')\n```",
+    "params": [
+      {"name": "member", "desc": "Üye objesi"},
+      {"name": "before", "desc": "Önceki ses durumu"},
+      {"name": "after", "desc": "Sonraki ses durumu"}
+    ]
+  },
+  {
+    "name": "onLeftVoice",
+    "type": "event",
+    "wiki": "Bir üye ses kanalından ayrıldığında çalışır.",
+    "incele": "```enc\nonLeftVoice(member, before, after):\n    log(member.username + ' sesli kanaldan ayrıldı')\n```",
+    "params": [
+      {"name": "member", "desc": "Üye objesi"},
+      {"name": "before", "desc": "Önceki ses durumu"},
+      {"name": "after", "desc": "Sonraki ses durumu"}
+    ]
+  },
+  {
+    "name": "onVoiceMove",
+    "type": "event",
+    "wiki": "Bir üye ses kanalı değiştirdiğinde çalışır.",
+    "incele": "```enc\nonVoiceMove(member, before, after):\n    log(member.username + ' ses kanalı değiştirdi')\n```",
+    "params": [
+      {"name": "member", "desc": "Üye objesi"},
+      {"name": "before", "desc": "Önceki ses durumu"},
+      {"name": "after", "desc": "Sonraki ses durumu"}
+    ]
+  },
+  {
+    "name": "onReactionAdd",
+    "type": "event",
+    "wiki": "Bir mesaja tepki eklendiğinde çalışır.",
+    "incele": "```enc\nonReactionAdd(reaction, user):\n    log(user.username + ' tepki ekledi')\n```",
+    "params": [
+      {"name": "reaction", "desc": "Tepki objesi"},
+      {"name": "user", "desc": "Tepki ekleyen kullanıcı"}
+    ]
+  },
+  {
+    "name": "onReactionRemove",
+    "type": "event",
+    "wiki": "Bir mesajdan tepki kaldırıldığında çalışır.",
+    "incele": "```enc\nonReactionRemove(reaction, user):\n    log(user.username + ' tepkiyi kaldırdı')\n```",
+    "params": [
+      {"name": "reaction", "desc": "Tepki objesi"},
+      {"name": "user", "desc": "Tepkiyi kaldıran kullanıcı"}
+    ]
+  },
+  {
+    "name": "onTyping",
+    "type": "event",
+    "wiki": "Birisi yazmaya başladığında çalışır.",
+    "incele": "```enc\nonTyping(channel, user, when):\n    log(user.username + ' yazıyor')\n```",
+    "params": [
+      {"name": "channel", "desc": "Kanal objesi"},
+      {"name": "user", "desc": "Kullanıcı objesi"},
+      {"name": "when", "desc": "Zaman bilgisi"}
+    ]
+  },
+  {
+    "name": "onChannelCreate",
+    "type": "event",
+    "wiki": "Yeni bir kanal oluşturulduğunda çalışır.",
+    "incele": "```enc\nonChannelCreate(channel):\n    log(channel.name + ' kanalı oluşturuldu')\n```",
+    "params": [{"name": "channel", "desc": "Oluşturulan kanal objesi"}]
+  },
+  {
+    "name": "onChannelDelete",
+    "type": "event",
+    "wiki": "Bir kanal silindiğinde çalışır.",
+    "incele": "```enc\nonChannelDelete(channel):\n    log(channel.name + ' kanalı silindi')\n```",
+    "params": [{"name": "channel", "desc": "Silinen kanal objesi"}]
+  },
+  {
+    "name": "onChannelEdit",
+    "type": "event",
+    "wiki": "Bir kanal düzenlendiğinde çalışır.",
+    "incele": "```enc\nonChannelEdit(before, after):\n    log('Kanal güncellendi')\n```",
+    "params": [
+      {"name": "before", "desc": "Düzenlenmeden önceki kanal"},
+      {"name": "after", "desc": "Düzenlenmeden sonraki kanal"}
+    ]
+  },
+  {
+    "name": "onRoleCreate",
+    "type": "event",
+    "wiki": "Yeni bir rol oluşturulduğunda çalışır.",
+    "incele": "```enc\nonRoleCreate(role):\n    log(role.name + ' rolü oluşturuldu')\n```",
+    "params": [{"name": "role", "desc": "Oluşturulan rol objesi"}]
+  },
+  {
+    "name": "onRoleDelete",
+    "type": "event",
+    "wiki": "Bir rol silindiğinde çalışır.",
+    "incele": "```enc\nonRoleDelete(role):\n    log(role.name + ' rolü silindi')\n```",
+    "params": [{"name": "role", "desc": "Silinen rol objesi"}]
+  },
+  {
+    "name": "onRoleEdit",
+    "type": "event",
+    "wiki": "Bir rol düzenlendiğinde çalışır.",
+    "incele": "```enc\nonRoleEdit(before, after):\n    log('Rol güncellendi')\n```",
+    "params": [
+      {"name": "before", "desc": "Düzenlenmeden önceki rol"},
+      {"name": "after", "desc": "Düzenlenmeden sonraki rol"}
+    ]
+  },
+  {
+    "name": "onInviteCreate",
+    "type": "event",
+    "wiki": "Yeni bir davet linki oluşturulduğunda çalışır.",
+    "incele": "```enc\nonInviteCreate(invite):\n    log('Davet oluşturuldu: ' + invite.code)\n```",
+    "params": [{"name": "invite", "desc": "Davet objesi"}]
+  },
+  {
+    "name": "onInviteDelete",
+    "type": "event",
+    "wiki": "Bir davet linki silindiğinde çalışır.",
+    "incele": "```enc\nonInviteDelete(invite):\n    log('Davet silindi')\n```",
+    "params": [{"name": "invite", "desc": "Silinen davet objesi"}]
+  },
+  {
+    "name": "onButtonClick",
+    "type": "event",
+    "wiki": "Bir butona tıklandığında çalışır.",
+    "incele": "```enc\nonButtonClick(interaction):\n    replyButton(interaction, 'Butona tıkladın!')\n```",
+    "params": [{"name": "interaction", "desc": "Interaction objesi"}]
+  },
+  {
+    "name": "onSelect",
+    "type": "event",
+    "wiki": "Bir dropdown seçimi yapıldığında çalışır.",
+    "incele": "```enc\nonSelect(interaction):\n    replySelect(interaction, 'Seçim yaptın!')\n```",
+    "params": [{"name": "interaction", "desc": "Interaction objesi"}]
+  },
+  {
+    "name": "onModalSubmit",
+    "type": "event",
+    "wiki": "Bir modal formu gönderildiğinde çalışır.",
+    "incele": "```enc\nonModalSubmit(interaction):\n    replyModal(interaction, 'Form alındı!')\n```",
+    "params": [{"name": "interaction", "desc": "Interaction objesi"}]
+  },
+  {
+    "name": "onSlash",
+    "type": "event",
+    "wiki": "Bir slash komutu çalıştırıldığında çalışır.",
+    "incele": "```enc\nonSlash(interaction):\n    replySlash(interaction, 'Komut çalıştırıldı!')\n```",
+    "params": [{"name": "interaction", "desc": "Interaction objesi"}]
+  },
+  {
+    "name": "onInteraction",
+    "type": "event",
+    "wiki": "Herhangi bir interaction gerçekleştiğinde çalışır.",
+    "incele": "```enc\nonInteraction(interaction):\n    log('Interaction gerçekleşti')\n```",
+    "params": [{"name": "interaction", "desc": "Interaction objesi"}]
+  },
+  {
+    "name": "onSlashAutocomplete",
+    "type": "event",
+    "wiki": "Slash komutu autocomplete tetiklendiğinde çalışır.",
+    "incele": "```enc\nonSlashAutocomplete(interaction):\n    replyAutocomplete(interaction, ['Opsiyon1', 'Opsiyon2'])\n```",
+    "params": [{"name": "interaction", "desc": "Interaction objesi"}]
+  },
+  {
+    "name": "onBoost",
+    "type": "event",
+    "wiki": "Sunucu boost yapıldığında çalışır.",
+    "incele": "```enc\nonBoost(before, after):\n    log('Boost yapıldı')\n```",
+    "params": [
+      {"name": "before", "desc": "Önceki boost durumu"},
+      {"name": "after", "desc": "Sonraki boost durumu"}
+    ]
+  },
+  {
+    "name": "onPlayStart",
+    "type": "event",
+    "wiki": "Müzik çalmaya başladığında çalışır.",
+    "incele": "```enc\nonPlayStart(url):\n    log('Müzik oynatılıyor: ' + url)\n```",
+    "params": [{"name": "url", "desc": "Müzik URL'i"}]
+  },
+  {
+    "name": "onPlayEnd",
+    "type": "event",
+    "wiki": "Müzik çalması bittiğinde çalışır.",
+    "incele": "```enc\nonPlayEnd(url):\n    log('Müzik bitti')\n```",
+    "params": [{"name": "url", "desc": "Müzik URL'i"}]
+  },
+  {
+    "name": "onQueueEnd",
+    "type": "event",
+    "wiki": "Müzik sırası bittiğinde çalışır.",
+    "incele": "```enc\nonQueueEnd(guild):\n    log('Sıra bitti')\n```",
+    "params": [{"name": "guild", "desc": "Sunucu objesi"}]
+  },
+  {
+    "name": "sendMessage",
+    "type": "function",
+    "wiki": "Belirtilen kanala mesaj gönderir.",
+    "incele": "```enc\nonMessage(msg):\n    sendMessage(msg.channel, 'Merhaba!')\n```",
+    "params": [
+      {"name": "channel", "desc": "Kanal objesi veya ID"},
+      {"name": "content", "desc": "Gönderilecek metin"}
+    ]
+  },
+  {
+    "name": "sendReply",
+    "type": "function",
+    "wiki": "Bir mesaja yanıt olarak mesaj gönderir.",
+    "incele": "```enc\nonMessage(msg):\n    sendReply(msg, 'Yanıt')\n```",
+    "params": [
+      {"name": "message", "desc": "Yanıt verilebilecek mesaj objesi"},
+      {"name": "content", "desc": "Yanıt içeriği"}
+    ]
+  },
+  {
+    "name": "editMessage",
+    "type": "function",
+    "wiki": "Bir mesajı düzenler.",
+    "incele": "```enc\nonMessage(msg):\n    editMessage(msg, 'Düzenlendi')\n```",
+    "params": [
+      {"name": "message", "desc": "Düzenlenecek mesaj objesi"},
+      {"name": "content", "desc": "Yeni içerik"}
+    ]
+  },
+  {
+    "name": "deleteMessage",
+    "type": "function",
+    "wiki": "Bir mesajı siler.",
+    "incele": "```enc\nonMessage(msg):\n    deleteMessage(msg)\n```",
+    "params": [
+      {"name": "message", "desc": "Silinecek mesaj objesi"}
+    ]
+  },
+  {
+    "name": "purge",
+    "type": "function",
+    "wiki": "Belirtilen kanaldan belirtilen sayıda mesajı siler.",
+    "incele": "```enc\npurge(channel, 10)\n```",
+    "params": [
+      {"name": "channel", "desc": "Kanal objesi"},
+      {"name": "limit", "desc": "Silinecek mesaj sayısı"}
+    ]
+  },
+  {
+    "name": "pinMessage",
+    "type": "function",
+    "wiki": "Bir mesajı sabitler.",
+    "incele": "```enc\nonMessage(msg):\n    pinMessage(msg)\n```",
+    "params": [
+      {"name": "message", "desc": "Sabitlenecek mesaj objesi"}
+    ]
+  },
+  {
+    "name": "unpinMessage",
+    "type": "function",
+    "wiki": "Bir mesajın sabitlenmesini kaldırır.",
+    "incele": "```enc\nonMessage(msg):\n    unpinMessage(msg)\n```",
+    "params": [
+      {"name": "message", "desc": "Sabitlenmesi kaldırılacak mesaj objesi"}
+    ]
+  },
+  {
+    "name": "react",
+    "type": "function",
+    "wiki": "Bir mesaja tepki ekler.",
+    "incele": "```enc\nonMessage(msg):\n    react(msg, '👍')\n```",
+    "params": [
+      {"name": "message", "desc": "Tepki eklenecek mesaj objesi"},
+      {"name": "emoji", "desc": "Eklenecek emoji"}
+    ]
+  }
+]
